@@ -1,0 +1,67 @@
+.jumbotron {
+    background-color: rgb(52, 58, 64);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.brand-icon {
+    font-size: 200px;
+    width: 200px;
+}
+
+.food-recipe-logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.main-footer {
+    background-color: rgb(52, 58, 64);
+    /* Adjust background color as needed */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    max-height: 200px;
+}
+
+.centered-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Adjust the height as needed */
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    max-width: 1000px;
+    /* Adjust based on your preference */
+    padding: 20px;
+}
+
+.brand-icon {
+    font-size: 100px;
+    width: 100px;
+    padding-left: 10px;
+}
+
+.Food-title {
+    font-size: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+}
+
+.carousel-content {
+    min-height: 100vh;
+}
+
+.card-title {
+    font-size: 15px;
+}
