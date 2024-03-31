@@ -1,2 +1,3 @@
-# mini-hackathon
-All about Mini Hackathon, jaya jaya jaya!
+Hello, pls download this whole file, much easier. 
+npm start for start deployment on local server http://localhost:3000 (sometimes, the port number will differ if you have another current deployment going on.
+Most of the modified and added files are in src folder, which stored all the components of the web app.
