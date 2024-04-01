@@ -17,7 +17,7 @@ function Footer() {
 
                     {/* Column Middle */}
                     <div className="col-4">
-                        <img src="logo-food.jpg" alt="Food Recipe Logo" className="food-recipe-logo" />
+                        <img src="logo-food.png" alt="Food Recipe Logo" className="food-recipe-logo" />
                     </div>
 
                     {/* Column Right */}
