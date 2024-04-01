@@ -1,42 +1,50 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
 
 function Carousel() {
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        const fetchRecipes = async () => {
+            const response = await Axios.get('https://api.edamam.com/search?q=tasty&app_id=4419edfb&app_key=62c8cbd071f043a3c93dc204394210eb');
+            setRecipes(response.data.hits);
+        };
+        fetchRecipes();
+    },
+        []
+    );
+
     return (
         <>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 {/* Carousel Indicators */}
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <ol className="carousel-indicators">
+                    {recipes.map((recipe, index) => (
+                        <li key={index} data-target="#carouselExampleIndicators" data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
+                    ))}
                 </ol>
                 {/* Carousel Items */}
-                <div class="carousel-inner">
-                    {/* First Carousel Item */}
-                    <div class="carousel-item active p" style={{ cover: 'fit' }}>
-                        <img class="d-block w-100" src="pizza-dough.jpg" alt="Pizza sedap sekaliii" />
-                    </div>
-                    {/* Second Carousel Item */}
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="shepherds-pie.jpg" alt="pie mat sedap sekali" />
-                    </div>
-                    {/* Third Carousel Item */}
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="strawberry-choc-cake.webp" alt="Third slide" />
-                    </div>
+                <div className="carousel-inner">
+                    {recipes.map((recipe, index) => (
+                        <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                            <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">
+                                <img className="d-block w-100" src={recipe.recipe.image} alt={recipe.recipe.label} style={{ height: '300px', objectFit: 'cover' }} />
+                            </a>
+                        </div>
+                    ))}
                 </div>
                 {/* Carousel Controls */}
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Next</span>
                 </a>
             </div>
         </>
     )
 }
 
-export default Carousel
+export default Carousel;
