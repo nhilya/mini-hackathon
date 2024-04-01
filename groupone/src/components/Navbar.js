@@ -23,7 +23,7 @@ function Navbar() {
                             <Link to="/contact" class="nav-link">Contact</Link>
                         </li>
                         <li class="nav-item active">
-                            <Link to="/gallery" class="nav-link">Gallery</Link>
+                            <Link to="/carousel" class="nav-link">Gallery</Link>
                         </li>
                     </ul>
                 </div>
