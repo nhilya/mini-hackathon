@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
-import SearchBar from "./SearchBar";
 import Recipes from "./Recipes";
+import Header from "./Header";
 
 function Home() {
     const [search, setSearch] = useState('Search');
@@ -36,7 +36,7 @@ function Home() {
 
     return (
         <div className="home">
-            <SearchBar
+            <Header
                 search={search}
                 onInputChange={onInputChange}
                 onSearchClick={onSearchClick} />
