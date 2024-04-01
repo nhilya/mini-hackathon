@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css'
+import '../App.css'
 
 // Footer component for displaying the website footer
 function Footer() {
@@ -24,7 +24,7 @@ function Footer() {
                     <div className="col-4">
                         <h5>Directory</h5>
                         <ui className="list-unstyled">
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/home">Home</a></li>
                             <li><a href="/carousel" >Gallery</a></li>
                             <li><a href="/contact" >Contact Us</a></li>
                         </ui>

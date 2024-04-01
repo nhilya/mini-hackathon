@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./App.css";
+import "../App.css";
 
 // Contact component for capturing user feedback
 function Contact() {
