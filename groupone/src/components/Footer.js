@@ -8,7 +8,7 @@ function Footer() {
             <div className="container">
                 <div className="row">
                     {/* Column Left */}
-                    <div className="col">
+                    <div className="col-4">
                         <h5>Food Recipe</h5>
                         <h6 className="list-unstyled">
                             <li>Malaysia</li>
@@ -16,16 +16,16 @@ function Footer() {
                     </div>
 
                     {/* Column Middle */}
-                    <div className="col">
-                        <img src='logo.png' alt="Food Recipe Logo" className="food-recipe-logo" style={{ width: '100px' }} />
+                    <div className="col-4">
+                        <img src="logo-food.jpg" alt="Food Recipe Logo" className="food-recipe-logo" />
                     </div>
 
                     {/* Column Right */}
-                    <div className="col">
+                    <div className="col-4">
                         <h5>Directory</h5>
                         <ui className="list-unstyled">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/gallery" >Gallery</a></li>
+                            <li><a href="/carousel" >Gallery</a></li>
                             <li><a href="/contact" >Contact Us</a></li>
                         </ui>
                     </div>
