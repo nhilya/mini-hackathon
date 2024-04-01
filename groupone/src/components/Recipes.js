@@ -21,12 +21,11 @@ function RecipeModal(props) {
             </Modal.Header>
             <Modal.Body>
                 <h4>Ingredients</h4>
-                <p>
-                    {/* Display the list of ingredients using map */}
-                    {ingredientLines.map((ingredient) => (
-                        <li className="list-group-item">{ingredient}</li>
+                <ul className="list-group">
+                    {ingredientLines.map((ingredient, index) => (
+                        <li key={index} className="list-group-item">{ingredient}</li>
                     ))}
-                </p>
+                </ul>
             </Modal.Body>
             <Modal.Footer>
                 {/* Button to close the modal */}
@@ -51,10 +50,11 @@ function RecipeItem(props) {
                 label={name} // Name of the recipe for the modal title
                 ingredientLines={ingredientLines} // List of ingredients for the modal
             />
-            <div className="card py-2 my-4 text-center">
+            <div className="card py-1 my-2 text-center h-100">
                 <img
                     src={image}
-                    className="img-fluid w-50 mx-auto rounded-circle"
+                    className="img-fluid w-100 card-img-top"
+                    style={{ objectFit: "cover", height: "200px" }}
                     alt="recipe"
                 />
                 <div className="card-body">
@@ -65,7 +65,7 @@ function RecipeItem(props) {
                             setModalShow(true); //Show the modal
                         }}
                     >
-                        <h5>{name}</h5> {/* Display the name of the recipe */}
+                        <h5 className="card-title">{name}</h5> {/* Display the name of the recipe */}
                     </button>
                 </div>
             </div>
