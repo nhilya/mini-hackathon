@@ -13,7 +13,7 @@ function Header(props) {
                     <div> {/* Wrap the Food Recipe and image inside a div */}
                         <h1 className="Food-title">Food Recipe</h1>
                     </div>
-                    <img src="logo-food.jpg" alt="FoodLogo" className="brand-icon mb-2" style={{ width: '150px' }} />
+                    <img src="logo-food.png" alt="FoodLogo" className="brand-icon mb-2" style={{ width: '150px' }} />
                     <input
                         type="text"
                         className="form-control w-50 mr-sm-2"
