@@ -5,11 +5,12 @@ function Carousel() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
+        // Function to fetch recipes from the Edamam API
         const fetchRecipes = async () => {
             const response = await Axios.get('https://api.edamam.com/search?q=tasty&app_id=4419edfb&app_key=62c8cbd071f043a3c93dc204394210eb');
             setRecipes(response.data.hits);
         };
-        fetchRecipes();
+        fetchRecipes(); // Call the fetchRecipes function when the component mounts
     },
         []
     );
@@ -19,12 +20,14 @@ function Carousel() {
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 {/* Carousel Indicators */}
                 <ol className="carousel-indicators">
-                    {recipes.map((recipe, index) => (
+                    {/* Map through recipes to create carousel indicators */}
+                    {recipes.map((index) => (
                         <li key={index} data-target="#carouselExampleIndicators" data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
                     ))}
                 </ol>
                 {/* Carousel Items */}
                 <div className="carousel-inner">
+                    {/* Map through recipes to create carousel items */}
                     {recipes.map((recipe, index) => (
                         <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                             <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">
